@@ -9,21 +9,20 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="stylesheet" href="{{ "https://www.w3schools.com/w3css/4/w3.css" | absURL }}">
+  <link rel="stylesheet" href="{{ "https://www.w3schools.com/w3css/5/w3.css" | absURL }}">
+  <link rel="icon" href="{{ `images/favicon.ico` | absURL }}">
   
-  {{ $css := "css/main.css" | absURL }}
-  <link rel="stylesheet" href="{{ $css }}">
-  
-  <!--
-  <script src="{{ "js/main.js" | absURL }}"></script>
-  -->
-  
+  {{ range .Site.Params.custom_css -}}
+  <link rel="stylesheet" href="{{ . | absURL }}">
+  {{- end }}
+    
   <script src="{{ .Site.Params.fontawesome }}" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
 
   {{ $title := print .Title " | " .Site.Title }}
   {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
   <title>{{ $title }}</title>
-
+  
 </head>
