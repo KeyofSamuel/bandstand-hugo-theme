@@ -1,0 +1,34 @@
+{{ "<!-- Footer Section -->" | safeHTML }}
+
+<div class="w3-theme-darkgray"><p>X</p></div>
+		
+<div class="w3-padding-large w3-row">
+	
+	<div class="w3-content w3-center w3-half">
+		<h1>Feel Free To Contact Us</h1>
+		<p>If you're interested in booking a show with us, or just want to drop a friendly note, click the button below!</p>
+        
+		<a class="w3-btn w3-round-large w3-padding-large w3-theme" href="{{ .Site.Params.cta }}">Contact Us</a>
+	</div>
+
+	<div class="w3-center w3-padding-large w3-half">
+			<img style="width:35%" src="{{ .Site.Params.bgimage | relURL }}" class="w3-image" alt="Missing Logo File">
+	</div>
+
+</div>
+
+<div class="w3-theme w3-center">
+
+	{{ range .Site.Params.footer.links }}
+	  <a class="w3-button w3-hover-theme w3-padding w3-center w3-text-theme-white" href="{{ .url | safeURL }}">
+		<i class="w3-text-theme-white {{ .icon }}"></i>
+		{{ .name }}
+	  </a>
+	{{ end }}
+    <div class="w3-center w3-text-theme-white" style="font-size:1vw">
+		Copyright: <script>document.write(new Date().getFullYear())</script>. 
+		Powered by Hugo. See the <a href="{{ "/about" | relURL}}">SITE</a> page for site details.
+    </div>
+
+
+</div>
