@@ -1,0 +1,21 @@
+{{ define "main" }}
+{{ "<!-- Shows Single Page Layout -->" | safeHTML }}
+
+<div class="w3-theme w3-center w3-padding-large topMargin">
+	<h1 class="w3-text-theme-white">{{ .Title }}</h1>
+</div>
+
+<div class="w3-content">
+	
+	<div>
+		{{ with .Content }}
+			<div>
+				{{ . }}
+			</div>
+		{{ end }}
+	</div>
+		
+</div>
+
+
+{{ end }}
