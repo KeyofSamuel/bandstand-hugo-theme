@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+{{ "<!-- Shows Single Page Layout -->" | safeHTML }}
+
+<div class="w3-theme w3-center w3-padding-large topMargin">
+	<h1 class="w3-text-theme-white">{{ .Title }}</h1>
+</div>
+
+<div class="w3-row-padding w3-padding-large">
+	
+	<div class="w3-twothird w3-padding-large">
+		<h1>Playing Live at <b>{{ .Params.venue }}</b></h1>
+		<h2>on {{ .Params.showdate }} at {{ .Params.showtime }}</h2>
+
+		{{ with .Content }}
+			<div class="w3-left">
+				{{ . }}
+			</div>
+		{{ end }}
+	</div>
+		
+	<div class="w3-card w3-third w3-padding-large w3-theme-lightgray">
+
+		{{ with .Params.venue }}
+			<h5 class="w3-text-theme"><b>Venue</b></h5>
+			<h6>{{ . }}</h6>
+		{{ end }}
+		
+		{{ with .Params.showdate }}
+			<h5 class="w3-text-theme"><b>Show Date</b></h5>
+			<h6>{{ . }}</h6>
+		{{ end }}
+		
+		{{ with .Params.showtime }}
+			<h6>{{ . }}</h6>
+		{{ end }}
+		
+		{{ with .Params.address }}
+			<h5 class="w3-text-theme"><b>Address</b></h5>
+			<h6>{{ . }}</h6>
+		{{ end }}
+		
+	</div>
+
+</div>
+
+{{ end }}
