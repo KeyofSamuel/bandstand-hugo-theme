@@ -9,7 +9,7 @@
 		
 </div>
 
-	{{ range first 3 (where .Site.RegularPages "Section" "shows") }}
+	{{ range first 3 (where .Site.RegularPages "Section" "shows").Reverse }}
 
 		<div class="w3-padding-large w3-row">
 		  
