@@ -1,0 +1,30 @@
+* { 
+	color: #4e4e4e;
+	font-family:Rubik;
+	}
+
+b {
+	font-family:Roboto Slab;
+}
+
+h1, h2 {
+	font-family:Roboto Slab;
+}
+
+.w3-theme {color:#fff !important; background-color:#b7410e !important}
+
+.w3-theme-lightgray {background-color:#dfdfdf !important}
+.w3-theme-gray {background-color:#a0a0a0 !important}
+.w3-theme-darkgray {background-color:#4e4e4e !important}
+.w3-theme-black {background-color:#303030 !important}
+.w3-theme-white {background-color:#fff !important}
+
+.w3-text-theme {color:#b7410e !important}
+.w3-text-theme-std {color:#4e4e4e !important}
+.w3-text-theme-white {color:#fff !important}
+
+.w3-hover-theme:hover {color:#fff !important; background-color:#b7410e !important}
+.w3-hover-text-theme:hover {color:#b7410e !important}
+.w3-hover-border-theme:hover {border-color:#b7410e !important}
+
+.w3-border-theme {border-color:#b7410e !important}
