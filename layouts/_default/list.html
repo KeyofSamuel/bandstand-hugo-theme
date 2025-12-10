@@ -1,0 +1,51 @@
+{{ define "main" }}
+{{ "<!-- Default List Page Layout -->" | safeHTML }}
+
+<div class="w3-theme w3-center w3-padding-large topMargin">
+	<h1 class="w3-text-theme-white">{{ .Title }}</h1>
+</div>
+
+<div class="w3-row w3-center">
+
+	{{ "<!-- Tag Cloud -->" | safeHTML }}
+	<div class="w3-container w3-third">
+		<h2 class="w3-border-bottom">Tags</h2>
+	
+		{{ $tags := $.Site.Taxonomies.tags.ByCount }}
+		{{ $v1 := where $tags "Count" ">=" 1 }}
+		{{ $v2 := where $v1 "Term" "not in" (slice "hugo" "tags" "rss") }}
+		{{ range $v2 }}
+		{{ if .Term }}
+		{{ $tagURL := printf "tags/%s" .Term | relURL }}
+		<a href="{{ $tagURL }}" class="w3-padding" role="button" style="text-transform: uppercase;">{{ .Term }}({{ .Count }})</a>
+		{{ end }}
+		{{ end }}
+		
+	</div>
+	
+	{{ "<!-- Post Listings -->" | safeHTML }}
+	<div class="w3-container w3-third w3-text-theme">
+	  
+		{{ range .Pages  }}
+		<div class="w3-container w3-border-bottom">
+			
+			<a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+			<a><i>Posted on {{ .Date.Format "2006/01/02" }}</i></a>
+			<br />
+		  
+			<a class="w3-text-theme">{{ .Summary }}</a>
+		  
+			<a>Tagged: </a>
+			{{ range .Params.tags }}
+			{{ $name := . }}
+			<a>{{ $name }}</a>
+			{{ end }}
+		  
+		</div>
+		{{ end }}
+
+	</div>
+
+</div>
+
+{{ end }}
