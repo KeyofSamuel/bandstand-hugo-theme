@@ -64,13 +64,16 @@
 		
 			</div>
 				<div class="w3-center">
-				{{ range (.Resources.Match "presskit/*.png") }}
+				{{ range ( .Page.Resources.Match "*.png") }}
 					<a href="{{ .RelPermalink }}">
 					<img style="width:25%;" src="{{ .RelPermalink }}" alt="" class="w-96">
 					</a>
 				{{ end }}
 				</div>
 			</div>
+					<a>
+					<img style="width:25%;" src="presskit/baddadz-promo_still-logo_name.png" alt="" class="w-96">
+					</a>
 			
 		</div>
 	{{ end }}
