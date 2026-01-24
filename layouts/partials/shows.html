@@ -22,16 +22,33 @@
 				</div>
 						
 				<div class="w3-quarter w3-center" style="width:50%;">
-					<h1 href="{{ .RelPermalink }}">
+					{{ "<!-- Large Heading -->" | safeHTML }}
+					<h1 class="w3-hide-small" href="{{ .RelPermalink }}">
 							{{ .Title }}
 					</h1>
-				
-					<p style="font-size:1.3vw;" href="{{ .RelPermalink }}">
+					
+					{{ "<!-- Small Heading -->" | safeHTML }}
+					<h3 class="w3-hide-large w3-hide-medium" href="{{ .RelPermalink }}">
+							{{ .Title }}
+					</h3>
+					
+					{{ "<!-- Large Details -->" | safeHTML }}
+					<p class="w3-hide-small" style="font-size:1.3vw;" href="{{ .RelPermalink }}">
 						{{ .Page.Params.showdate }}<br/>
 						{{ .Page.Params.showtime }}
 					</p>
-
+					
+					{{ "<!-- Small Details -->" | safeHTML }}
+					<p class="w3-hide-large w3-hide-medium" href="{{ .RelPermalink }}">
+						{{ .Page.Params.showdate }}<br/>
+						{{ .Page.Params.showtime }}
+					</p>
+					
+					{{ "<!-- Large Button -->" | safeHTML }}
 					<a class="w3-bar-item w3-btn w3-round-large w3-card w3-text-black w3-hover-text-theme w3-hover-white w3-hide-small" href="{{ .Permalink }}">Show Details</a>
+					
+					{{ "<!-- Small Button -->" | safeHTML }}
+					<a class="w3-bar-item w3-btn w3-round-large w3-card w3-text-black w3-hover-text-theme w3-hover-white w3-hide-large w3-hide-medium" href="{{ .Permalink }}">Show Details</a>
 
 				</div>
 				
