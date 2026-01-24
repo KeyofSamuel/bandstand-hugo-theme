@@ -16,15 +16,30 @@
 			<img src="{{ .Params.Image | relURL }}" class="w3-image" alt="this is a title">
 		</div>
 				
+				
 		<div class="w3-quarter w3-center" style="width:50%;">
-			<h1 style="font-size:2vw;" href="{{ .RelPermalink }}">
+			{{ "<!-- Large Heading -->" | safeHTML }}
+			<h1 class="w3-hide-small" style="font-size:2vw;"href="{{ .RelPermalink }}">
 					{{ .Title }}
 			</h1>
-		
-				<h5>Show Date: <b>{{ .Page.Params.showdate }}</b><br/>at {{ .Page.Params.showtime }}</h5>
-				
-				<a class="w3-bar-item w3-btn w3-round-large w3-card w3-text-black w3-hover-text-theme w3-hover-white w3-hide-small" href="{{ .Permalink }}">Show Details</a>
-				
+			
+			{{ "<!-- Small Heading -->" | safeHTML }}
+			<h3 class="w3-hide-large w3-hide-medium" href="{{ .RelPermalink }}">
+					{{ .Title }}
+			</h3>
+			
+			{{ "<!-- Large Details -->" | safeHTML }}
+			<h5 class="w3-hide-small">Show Date: <b>{{ .Page.Params.showdate }}</b><br/>at {{ .Page.Params.showtime }}</h5>
+			
+			{{ "<!-- Small Details -->" | safeHTML }}
+			<h5 class="w3-hide-medium w3-hide-large">Show Date: <b>{{ .Page.Params.showdate }}</b><br/>at {{ .Page.Params.showtime }}</h5>
+			
+			{{ "<!-- Large Button -->" | safeHTML }}
+			<a class="w3-bar-item w3-btn w3-round-large w3-card w3-text-black w3-hover-text-theme w3-hover-white w3-hide-small" href="{{ .Permalink }}">Show Details</a>
+			
+			{{ "<!-- Small Button -->" | safeHTML }}
+			<a class="w3-bar-item w3-btn w3-round-large w3-card w3-text-black w3-hover-text-theme w3-hover-white w3-hide-large w3-hide-medium" href="{{ .Permalink }}">Show Details</a>
+
 		</div>
 		
 	</div>
